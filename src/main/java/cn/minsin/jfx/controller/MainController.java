@@ -80,7 +80,6 @@ public class MainController implements Initializable {
 
     public ToggleGroup isOverride = FxRadioButton.create();
 
-
     private GData gData;
 
     public void testConnection(MouseEvent actionEvent) {
@@ -88,7 +87,7 @@ public class MainController implements Initializable {
     }
 
     public void about(ActionEvent actionEvent) throws URISyntaxException, IOException {
-        Desktop.getDesktop().browse(new URI("https://github.com/mintonzhang/sql-auto-creator"));
+        Desktop.getDesktop().browse(new URI("https://github.com/mintonzhang/code-auto-creator"));
     }
 
     public void commit(ActionEvent actionEvent) {
