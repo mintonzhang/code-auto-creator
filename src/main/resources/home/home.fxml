@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane minHeight="200.0" minWidth="279.0" prefHeight="735.0" prefWidth="810.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cn.minsin.jfx.controller.MainController">
+
+<!--    <fx:define>
+        <ToggleGroup fx:id="isDate" />
+        <ToggleGroup fx:id="isEnableLombok" />
+        <ToggleGroup fx:id="isSkipView" />
+        <ToggleGroup fx:id="isUnderlineToCamel" />
+        <ToggleGroup fx:id="isOverride" />
+    </fx:define>-->
+   <children>
+       <ToolBar layoutY="-2.0" maxHeight="44.0" maxWidth="907.0" minHeight="0.0" minWidth="0.0" prefHeight="35.0" prefWidth="810.0" AnchorPane.bottomAnchor="702.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-2.0">
+           <items>
+               <Button mnemonicParsing="false" onAction="#about" text="关于我们" />
+           </items>
+       </ToolBar>
+
+       <Pane layoutX="-1.0" layoutY="36.0" prefHeight="149.0" prefWidth="810.0">
+      <children>
+              <Label layoutX="5.0" text="温馨提示：工具不会收集任何数据库相关信息，请放心使用！" textFill="RED" />
+              <Label layoutX="14.0" layoutY="81.0" text="用户名" textFill="RED" />
+
+              <Label layoutX="14.0" layoutY="36.0" text="URL" textFill="RED" />
+              <TextField fx:id="url" layoutX="62.0" layoutY="32.0" prefHeight="23.0" prefWidth="739.0" promptText="Url连接语句" />
+
+              <TextField fx:id="username" layoutX="65.0" layoutY="75.0" prefHeight="23.0" prefWidth="161.0" promptText="请输入用户名" text="root" />
+
+
+              <Label layoutX="294.0" layoutY="79.0" text="密码" textFill="RED" />
+              <PasswordField fx:id="password" layoutX="343.0" layoutY="75.0" prefHeight="23.0" prefWidth="161.0" promptText="请输入密码" />
+
+              <Label layoutX="14.0" layoutY="117.0" text="数据库" textFill="RED" />
+              <ComboBox fx:id="databaseType" layoutX="65.0" layoutY="113.0" prefHeight="23.0" prefWidth="161.0" />
+
+              <Button layoutX="554.0" layoutY="89.0" onMouseClicked="#testConnection" prefHeight="35.0" prefWidth="102.0" text="测试连接">
+        </Button>
+            <Label layoutX="294.0" layoutY="117.0" text="驱动" textFill="RED" />
+            <TextField fx:id="diverPath" layoutX="343.0" layoutY="113.0" onMouseClicked="#chooseFile" promptText="请选择驱动jar包" />
+      </children>
+
+       </Pane>
+
+       <Pane layoutX="-1.0" layoutY="178.0" prefHeight="257.0" prefWidth="810.0">
+      <children>
+              <Label layoutX="36.0" layoutY="105.0" text="实体类包名" textFill="RED" />
+              <TextField fx:id="entityPackage" layoutX="105.0" layoutY="101.0" prefHeight="23.0" prefWidth="161.0" promptText="请输入实体类包名" text="cn.minsin.po" />
+              <TextField fx:id="entityDir" layoutX="105.0" layoutY="144.0" onMouseClicked="#chooseFile" prefHeight="23.0" prefWidth="161.0" promptText="请选择实体类保存目录" />
+              <Label layoutX="36.0" layoutY="148.0" text="保存目录" textFill="RED" />
+              <TextField fx:id="entitySuffix" layoutX="346.0" layoutY="101.0" prefHeight="23.0" prefWidth="161.0" promptText="请输入实体类后缀" text="PO" />
+              <Label layoutX="294.0" layoutY="105.0" prefHeight="15.0" prefWidth="30.0" text="后缀" textFill="RED" />
+              <Label layoutX="14.0" layoutY="69.0" text="实体类设置" />
+
+              <RadioButton layoutX="105.0" layoutY="199.0" mnemonicParsing="false" selected="true" text="开启" userData="true">
+               <toggleGroup>
+                  <ToggleGroup fx:id="isEnableLombok" />
+               </toggleGroup></RadioButton>
+              <RadioButton layoutX="186.0" layoutY="199.0" mnemonicParsing="false" text="关闭" toggleGroup="$isEnableLombok" userData="false" />
+
+
+              <Label layoutX="293.0" layoutY="201.0" text="时间类型" />
+              <RadioButton layoutX="441.0" layoutY="199.0" mnemonicParsing="false" text="LocalDate系列" userData="false">
+               <toggleGroup>
+                  <ToggleGroup fx:id="isDate" />
+               </toggleGroup></RadioButton>
+              <RadioButton layoutX="361.0" layoutY="200.0" mnemonicParsing="false" selected="true" text="Date系列" toggleGroup="$isDate" userData="true" />
+
+
+              <Label layoutX="36.0" layoutY="200.0" text="驼峰命名" />
+              <RadioButton layoutX="619.0" layoutY="149.0" mnemonicParsing="false" selected="true" text="开启" userData="true">
+               <toggleGroup>
+                  <ToggleGroup fx:id="isUnderlineToCamel" />
+               </toggleGroup></RadioButton>
+              <RadioButton layoutX="697.0" layoutY="148.0" mnemonicParsing="false" text="关闭" toggleGroup="$isUnderlineToCamel" userData="false" />
+
+
+              <Label layoutX="549.0" layoutY="148.0" text="Lombok" />
+              <TextField fx:id="logicDelete" layoutX="630.0" layoutY="101.0" promptText="请输入逻辑删除字段" />
+              <Label layoutX="549.0" layoutY="105.0" text="逻辑删除字段" />
+              <Label layoutX="293.0" layoutY="150.0" text="父类" />
+              <TextField fx:id="entityBaseClass" layoutX="346.0" layoutY="144.0" prefHeight="23.0" prefWidth="161.0" promptText="请输入父类全称" />
+              <Label layoutX="293.0" layoutY="24.0" text="全局目录" />
+              <TextField fx:id="globalDir" layoutX="346.0" layoutY="20.0" onMouseClicked="#chooseFile" promptText="设置全局保存目录" />
+              <Label layoutX="535.0" layoutY="25.0" text="注意：全局目录设置后下方保存目录将失效" textFill="#fc0707" />
+
+              <Label layoutX="12.0" layoutY="24.0" text="是否覆盖同名文件" />
+              <RadioButton layoutX="186.0" layoutY="24.0" mnemonicParsing="false" selected="true" text="否" userData="false">
+               <toggleGroup>
+                  <ToggleGroup fx:id="isOverride" />
+               </toggleGroup></RadioButton>
+              <RadioButton layoutX="117.0" layoutY="23.0" mnemonicParsing="false" text="是" toggleGroup="$isOverride" userData="true" />
+             <Separator layoutX="-8.0" layoutY="13.0" prefHeight="0.0" prefWidth="810.0" />
+      </children>
+       </Pane>
+
+       <Pane layoutX="1.0" layoutY="422.0" prefHeight="313.0" prefWidth="810.0">
+      <children>
+              <Label layoutX="286.0" layoutY="53.0" text="后缀" textFill="RED" />
+              <TextField fx:id="mapperSuffix" layoutX="342.0" layoutY="48.0" prefHeight="23.0" prefWidth="161.0" promptText="请输入Mapper后缀" text="Mapper" />
+              <Label layoutX="31.0" layoutY="53.0" text="Mapper包名" textFill="RED" />
+              <TextField fx:id="mapperPackage" layoutX="101.0" layoutY="49.0" promptText="请输入Mapper包名" text="cn.minsin.mapper" />
+              <Label layoutX="31.0" layoutY="93.0" text="保存目录" textFill="RED" />
+              <TextField fx:id="mapperDir" layoutX="101.0" layoutY="89.0" onMouseClicked="#chooseFile" promptText="请选择Mapper保存目录" />
+              <Label layoutX="11.0" layoutY="14.0" text="Mapper设置" />
+              <Label layoutX="551.0" layoutY="53.0" text="XML保存目录" textFill="RED" />
+              <TextField fx:id="mapperXmlDir" layoutX="633.0" layoutY="48.0" onMouseClicked="#chooseFile" promptText="请选择XML保存目录" />
+              <TextField fx:id="mapperBaseClass" layoutX="342.0" layoutY="89.0" prefHeight="23.0" prefWidth="161.0" promptText="请输入父类全称" />
+              <Label layoutX="286.0" layoutY="93.0" text="父类" />
+              <Label layoutX="11.0" layoutY="134.0" text="自动生成设置" />
+              <Label layoutX="552.0" layoutY="158.0" text="是否生成视图" />
+              <RadioButton layoutX="713.0" layoutY="157.0" mnemonicParsing="false" text="否" userData="false">
+               <toggleGroup>
+                  <ToggleGroup fx:id="isSkipView" />
+               </toggleGroup></RadioButton>
+              <RadioButton layoutX="641.0" layoutY="157.0" mnemonicParsing="false" selected="true" text="是" toggleGroup="$isSkipView" userData="true" />
+              <TextArea fx:id="tables" layoutX="117.0" layoutY="158.0" prefHeight="87.0" prefWidth="386.0" promptText="填写需要生成的表或视图名称.不填则生成全部,一行填写一个(回车换行)。" />
+              <Label layoutX="36.0" layoutY="166.0" text="需生成的表" />
+              <Button layoutX="245.0" layoutY="252.0" mnemonicParsing="false" onAction="#commit" prefHeight="35.0" prefWidth="83.0" text="提交" />
+              <Button layoutX="423.0" layoutY="252.0" mnemonicParsing="false" onMouseClicked="#reset" prefHeight="35.0" prefWidth="83.0" text="重置" />
+              <TextArea fx:id="tablePrefixes" layoutX="629.0" layoutY="188.0" prefHeight="64.0" prefWidth="168.0" promptText="填写表或视图前缀,一行填写一个(回车换行)。" />
+              <Label layoutX="552.0" layoutY="194.0" text="表或视图前缀" />
+      </children>
+       </Pane>
+   </children>
+</AnchorPane>
