@@ -2,7 +2,6 @@ package cn.minsin.jfx.constant;
 
 import cn.minsin.jfx.model.GData;
 import com.alibaba.fastjson.JSON;
-import lombok.Cleanup;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -33,9 +32,9 @@ public class GlobalVariables {
 
     public static void save(String data) {
         try {
-            @Cleanup
-            FileOutputStream fileOutputStream = new FileOutputStream(LOCAL_CACHE_DIR.concat(LOCAL_FILE),false);
-            fileOutputStream.write(data.getBytes());
+            FileOutputStream fileOutputStream = new FileOutputStream(LOCAL_CACHE_DIR.concat(LOCAL_FILE), false);
+            fileOutputStream.write(data.getBytes(StandardCharsets.UTF_8));
+            fileOutputStream.close();
         } catch (Exception e) {
             e.printStackTrace();
         }
