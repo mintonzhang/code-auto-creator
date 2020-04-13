@@ -70,7 +70,7 @@ public class MyTemplateEngine extends VelocityTemplateEngine {
                 String entityName = tableInfo.getEntityName();
                 String controllerFile;
                 if (null != entityName && null != pathInfo.get("entity_path")) {
-                    String entity_path = URLDecoder.decode(pathInfo.get("entity_path"), StandardCharsets.UTF_8) + File.separator + "%s" + this.suffixJavaOrKt();
+                    String entity_path = URLDecoder.decode(pathInfo.get("entity_path"), String.valueOf(StandardCharsets.UTF_8)) + File.separator + "%s" + this.suffixJavaOrKt();
                     controllerFile = String.format(entity_path, entityName);
                     if (this.isCreate(FileType.ENTITY, controllerFile)) {
                         this.writer(objectMap, this.templateFilePath(template.getEntity(this.getConfigBuilder().getGlobalConfig().isKotlin())), controllerFile);
@@ -78,35 +78,35 @@ public class MyTemplateEngine extends VelocityTemplateEngine {
                 }
 
                 if (null != tableInfo.getMapperName() && null != pathInfo.get("mapper_path")) {
-                    controllerFile = String.format(URLDecoder.decode(pathInfo.get("mapper_path"), StandardCharsets.UTF_8) + File.separator + tableInfo.getMapperName() + this.suffixJavaOrKt(), entityName);
+                    controllerFile = String.format(URLDecoder.decode(pathInfo.get("mapper_path"), String.valueOf(StandardCharsets.UTF_8)) + File.separator + tableInfo.getMapperName() + this.suffixJavaOrKt(), entityName);
                     if (this.isCreate(FileType.MAPPER, controllerFile)) {
                         this.writer(objectMap, this.templateFilePath(template.getMapper()), controllerFile);
                     }
                 }
 
                 if (null != tableInfo.getXmlName() && null != pathInfo.get("xml_path")) {
-                    controllerFile = String.format(URLDecoder.decode(pathInfo.get("xml_path"), StandardCharsets.UTF_8) + File.separator + tableInfo.getXmlName() + ".xml", entityName);
+                    controllerFile = String.format(URLDecoder.decode(pathInfo.get("xml_path"), String.valueOf(StandardCharsets.UTF_8)) + File.separator + tableInfo.getXmlName() + ".xml", entityName);
                     if (this.isCreate(FileType.XML, controllerFile)) {
                         this.writer(objectMap, this.templateFilePath(template.getXml()), controllerFile);
                     }
                 }
 
                 if (null != tableInfo.getServiceName() && null != pathInfo.get("service_path")) {
-                    controllerFile = String.format(URLDecoder.decode(pathInfo.get("service_path"), StandardCharsets.UTF_8) + File.separator + tableInfo.getServiceName() + this.suffixJavaOrKt(), entityName);
+                    controllerFile = String.format(URLDecoder.decode(pathInfo.get("service_path"), String.valueOf(StandardCharsets.UTF_8)) + File.separator + tableInfo.getServiceName() + this.suffixJavaOrKt(), entityName);
                     if (this.isCreate(FileType.SERVICE, controllerFile)) {
                         this.writer(objectMap, this.templateFilePath(template.getService()), controllerFile);
                     }
                 }
 
                 if (null != tableInfo.getServiceImplName() && null != pathInfo.get("service_impl_path")) {
-                    controllerFile = String.format(URLDecoder.decode(pathInfo.get("service_impl_path"), StandardCharsets.UTF_8)  + File.separator + tableInfo.getServiceImplName() + this.suffixJavaOrKt(), entityName);
+                    controllerFile = String.format(URLDecoder.decode(pathInfo.get("service_impl_path"), String.valueOf(StandardCharsets.UTF_8))  + File.separator + tableInfo.getServiceImplName() + this.suffixJavaOrKt(), entityName);
                     if (this.isCreate(FileType.SERVICE_IMPL, controllerFile)) {
                         this.writer(objectMap, this.templateFilePath(template.getServiceImpl()), controllerFile);
                     }
                 }
 
                 if (null != tableInfo.getControllerName() && null != pathInfo.get("controller_path")) {
-                    controllerFile = String.format(URLDecoder.decode(pathInfo.get("controller_path"), StandardCharsets.UTF_8) + File.separator + tableInfo.getControllerName() + this.suffixJavaOrKt(), entityName);
+                    controllerFile = String.format(URLDecoder.decode(pathInfo.get("controller_path"), String.valueOf(StandardCharsets.UTF_8)) + File.separator + tableInfo.getControllerName() + this.suffixJavaOrKt(), entityName);
                     if (this.isCreate(FileType.CONTROLLER, controllerFile)) {
                         this.writer(objectMap, this.templateFilePath(template.getController()), controllerFile);
                     }

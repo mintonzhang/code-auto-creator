@@ -9,23 +9,12 @@
     <version>1.0</version>
 
     <properties>
-        <jfx.version>11.0.2</jfx.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.release>11</maven.compiler.release>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
         <poi.version>4.0.0</poi.version>
     </properties>
     <dependencies>
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-controls</artifactId>
-            <version>${jfx.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-fxml</artifactId>
-            <version>${jfx.version}</version>
-        </dependency>
-
         <dependency>
             <groupId>cn.minsin</groupId>
             <artifactId>mutils-core</artifactId>
@@ -51,17 +40,8 @@
         <dependency>
             <groupId>org.apache.velocity</groupId>
             <artifactId>velocity-engine-core</artifactId>
-            <version>RELEASE</version>
+            <version>2.2</version>
         </dependency>
-<!--
-
-        &lt;!&ndash; https://mvnrepository.com/artifact/mysql/mysql-connector-java &ndash;&gt;
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.19</version>
-        </dependency>
--->
 
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -70,27 +50,16 @@
         </dependency>
     </dependencies>
 
-    <repositories>
-        <repository>
-            <id>oracle</id>
-            <url>http://maven.icm.edu.pl/artifactory/repo/</url>
-        </repository>
-
-    </repositories>
     <build>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
+                <version>3.7.0</version>
                 <configuration>
-                    <target>${maven.compiler.release}</target>
-                    <source>${maven.compiler.release}</source>
-                    <release>${maven.compiler.release}</release>
-                    <compilerVersion>${maven.compiler.release}</compilerVersion>
-                    <compilerArgs>
-                        <arg>-J--add-opens=java.base/jdk.internal.misc=ALL-UNNAMED</arg>
-                    </compilerArgs>
+                    <source>{java.version}</source>
+                    <target>{java.version}</target>
+                    <encoding>{project.build.sourceEncoding}</encoding>
                 </configuration>
             </plugin>
             <plugin>

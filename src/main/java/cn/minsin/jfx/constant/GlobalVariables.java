@@ -47,8 +47,12 @@ public class GlobalVariables {
             if (file.exists()) {
                 //读取文件
                 FileInputStream fileInputStream = new FileInputStream(file);
-                byte[] bytes = fileInputStream.readAllBytes();
-                return JSON.parseObject(new String(bytes, StandardCharsets.UTF_8), GData.class);
+                StringBuilder stringBuilder = new StringBuilder();
+                byte[] buf = new byte[1024];
+                while (fileInputStream.read(buf) != -1) {
+                    stringBuilder.append(new String(buf, StandardCharsets.UTF_8));
+                }
+                return JSON.parseObject(stringBuilder.toString(), GData.class);
             }
         } catch (Exception ignored) {
 
