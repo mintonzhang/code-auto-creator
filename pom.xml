@@ -48,6 +48,15 @@
             <version>1.18.0</version>
         </dependency>
     </dependencies>
+    <repositories>
+        <repository>
+            <!-- 默认优先获取阿里云的依赖-->
+            <id>aliyun</id>
+            <url>http://maven.aliyun.com/nexus/content/groups/public</url>
+        </repository>
+
+    </repositories>
+
 
     <build>
         <plugins>
@@ -86,7 +95,8 @@
                             <shadedClassifierName>project-classifier</shadedClassifierName>
                             <outputFile>target\${project.artifactId}-${project.version}.RELEASE.jar</outputFile>
                             <transformers>
-                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                <transformer
+                                        implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                                     <mainClass>cn.minsin.jfx.Launcher</mainClass>
                                 </transformer>
                             </transformers>
