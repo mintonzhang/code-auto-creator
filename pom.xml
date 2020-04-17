@@ -13,8 +13,22 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <poi.version>4.0.0</poi.version>
         <java.version>1.8</java.version>
+        <jfx.version>11.0.2</jfx.version>
     </properties>
     <dependencies>
+        <!-- 兼容openJFX-->
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>${jfx.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>${jfx.version}</version>
+        </dependency>
+        <!-- 兼容openJFX-->
+
         <dependency>
             <groupId>cn.minsin</groupId>
             <artifactId>mutils-core</artifactId>
