@@ -1,6 +1,7 @@
 package cn.minsin.jfx.core;
 
 import cn.minsin.jfx.enums.SupportDBType;
+import cn.minsin.jfx.override.Oracle12CTypeConvert;
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
 import com.baomidou.mybatisplus.generator.config.IDbQuery;
@@ -22,10 +23,20 @@ public class CreateDatasource {
 
 	public static DataSourceConfig createDataSource(String url, String username, String password, String type, String jarPath) {
 		SupportDBType typeByName = SupportDBType.findTypeByName(type);
-		final DbType dbType = DbType.ORACLE_12C == typeByName.getDbType() ? DbType.ORACLE : typeByName.getDbType();
+		DbType dbType = typeByName.getDbType();
 
-		final ITypeConvert typeConvert = TypeConverts.getTypeConvert(typeByName.getDbType());
-		final IDbQuery dbQuery = new DbQueryRegistry().getDbQuery(typeByName.getDbType());
+		final ITypeConvert typeConvert;
+		final IDbQuery dbQuery;
+		if (dbType == DbType.ORACLE_12C || dbType == DbType.ORACLE) {
+			typeConvert = new Oracle12CTypeConvert();
+			dbQuery = new DbQueryRegistry().getDbQuery(DbType.ORACLE);
+			dbType = DbType.ORACLE;
+		} else {
+			typeConvert = TypeConverts.getTypeConvert(typeByName.getDbType());
+			dbQuery = new DbQueryRegistry().getDbQuery(typeByName.getDbType());
+		}
+
+
 		DataSourceConfig dataSourceConfig = new MyDataSourceConfig(jarPath);
 		dataSourceConfig.setPassword(password);
 		dataSourceConfig.setUsername(username);
