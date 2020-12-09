@@ -20,29 +20,35 @@ public class DynamicDriver implements Driver {
         this.dynamicDriver = d;
     }
 
-    public boolean acceptsURL(String u) throws SQLException {
-        return this.dynamicDriver.acceptsURL(u);
-    }
+	@Override
+	public boolean acceptsURL(String u) throws SQLException {
+		return this.dynamicDriver.acceptsURL(u);
+	}
 
-    public Connection connect(String u, Properties p) throws SQLException {
-        return this.dynamicDriver.connect(u, p);
-    }
+	@Override
+	public Connection connect(String u, Properties p) throws SQLException {
+		return this.dynamicDriver.connect(u, p);
+	}
 
-    public int getMajorVersion() {
-        return this.dynamicDriver.getMajorVersion();
-    }
+	@Override
+	public int getMajorVersion() {
+		return this.dynamicDriver.getMajorVersion();
+	}
 
-    public int getMinorVersion() {
-        return this.dynamicDriver.getMinorVersion();
-    }
+	@Override
+	public int getMinorVersion() {
+		return this.dynamicDriver.getMinorVersion();
+	}
 
-    public DriverPropertyInfo[] getPropertyInfo(String u, Properties p) throws SQLException {
-        return this.dynamicDriver.getPropertyInfo(u, p);
-    }
+	@Override
+	public DriverPropertyInfo[] getPropertyInfo(String u, Properties p) throws SQLException {
+		return this.dynamicDriver.getPropertyInfo(u, p);
+	}
 
-    public boolean jdbcCompliant() {
-        return this.dynamicDriver.jdbcCompliant();
-    }
+	@Override
+	public boolean jdbcCompliant() {
+		return this.dynamicDriver.jdbcCompliant();
+	}
 
     @Override
     public Logger getParentLogger() throws SQLFeatureNotSupportedException {
