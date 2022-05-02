@@ -1,4 +1,4 @@
-package cn.minsin.jfx.enums;
+package cn.minsin.cg.enums;
 
 import com.baomidou.mybatisplus.annotation.DbType;
 import lombok.Getter;

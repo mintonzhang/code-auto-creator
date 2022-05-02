@@ -1,4 +1,4 @@
-package cn.minsin.jfx.core;
+package cn.minsin.cg.core;
 
 import cn.minsin.core.tools.StringUtil;
 import com.baomidou.mybatisplus.core.toolkit.CollectionUtils;

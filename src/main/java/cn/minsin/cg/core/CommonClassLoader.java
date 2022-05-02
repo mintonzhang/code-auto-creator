@@ -1,6 +1,6 @@
-package cn.minsin.jfx.core;
+package cn.minsin.cg.core;
 
-import cn.minsin.jfx.Launcher;
+import cn.minsin.cg.Launcher;
 
 /**
  * @author minsin/mintonzhang@163.com

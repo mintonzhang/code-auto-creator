@@ -1,4 +1,4 @@
-package cn.minsin.jfx.constant;
+package cn.minsin.cg.constant;
 
 /**
  * @author minton.zhang

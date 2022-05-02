@@ -1,10 +1,10 @@
-package cn.minsin.jfx.core;
+package cn.minsin.cg.core;
 
+import cn.minsin.cg.model.ConfigProperties;
+import cn.minsin.cg.model.DataSourceProperties;
+import cn.minsin.cg.model.OutputProperties;
+import cn.minsin.cg.model.SettingProperties;
 import cn.minsin.core.tools.IOUtil;
-import cn.minsin.jfx.model.ConfigProperties;
-import cn.minsin.jfx.model.DataSourceProperties;
-import cn.minsin.jfx.model.OutputProperties;
-import cn.minsin.jfx.model.SettingProperties;
 import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.InjectionConfig;

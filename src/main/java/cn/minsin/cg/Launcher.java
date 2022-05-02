@@ -1,6 +1,6 @@
-package cn.minsin.jfx;
+package cn.minsin.cg;
 
-import cn.minsin.jfx.core.MutilsAutoGenerator;
+import cn.minsin.cg.core.MutilsAutoGenerator;
 
 /**
  * @author minton.zhang

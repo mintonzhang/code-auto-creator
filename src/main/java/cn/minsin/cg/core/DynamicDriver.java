@@ -1,4 +1,4 @@
-package cn.minsin.jfx.core;
+package cn.minsin.cg.core;
 
 import java.sql.Connection;
 import java.sql.Driver;

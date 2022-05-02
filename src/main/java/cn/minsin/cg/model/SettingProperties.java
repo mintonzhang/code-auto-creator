@@ -1,4 +1,4 @@
-package cn.minsin.jfx.model;
+package cn.minsin.cg.model;
 
 import lombok.Getter;
 import lombok.Setter;

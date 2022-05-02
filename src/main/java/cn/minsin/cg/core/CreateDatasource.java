@@ -1,7 +1,7 @@
-package cn.minsin.jfx.core;
+package cn.minsin.cg.core;
 
-import cn.minsin.jfx.enums.SupportDBType;
-import cn.minsin.jfx.override.Oracle12CTypeConvert;
+import cn.minsin.cg.enums.SupportDBType;
+import cn.minsin.cg.override.Oracle12CTypeConvert;
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
 import com.baomidou.mybatisplus.generator.config.IDbQuery;

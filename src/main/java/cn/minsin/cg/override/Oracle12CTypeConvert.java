@@ -1,4 +1,4 @@
-package cn.minsin.jfx.override;
+package cn.minsin.cg.override;
 
 import com.baomidou.mybatisplus.generator.config.GlobalConfig;
 import com.baomidou.mybatisplus.generator.config.converts.OracleTypeConvert;
