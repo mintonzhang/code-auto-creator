@@ -10,8 +10,8 @@
       "driverJarFile": "drivers/ojdbc8.jar",
       "driverClass": "oracle.jdbc.driver.OracleDriver",
       "url": "jdbc:oracle:thin:@47.111.8.143:35082/YWJAPDB",
-      "username": "YWJA",
-      "password": "ywjadid2021"
+      "username": "xxxx",
+      "password": "xxxx"
     }
   },
   "output": {
