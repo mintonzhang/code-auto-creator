@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * @Author: minton.zhang
+ * @author minton.zhang
  * @Date: 2019/7/19 16:42
  */
 public class MyTemplateEngine extends VelocityTemplateEngine {
@@ -43,7 +43,7 @@ public class MyTemplateEngine extends VelocityTemplateEngine {
     public AbstractTemplateEngine batchOutput() {
         try {
             List<TableInfo> tableInfoList = this.getConfigBuilder().getTableInfoList();
-            Iterator var2 = tableInfoList.iterator();
+            Iterator<TableInfo> var2 = tableInfoList.iterator();
 
             while(var2.hasNext()) {
                 TableInfo tableInfo = (TableInfo)var2.next();

@@ -9,8 +9,8 @@ import java.util.Properties;
 import java.util.logging.Logger;
 
 /**
- * @author: minton.zhang
- * @since: 2020/4/12 21:40
+ * @author minton.zhang
+ * @since 2020/4/12 21:40
  */
 public class DynamicDriver implements Driver {
 

@@ -10,8 +10,8 @@ import com.baomidou.mybatisplus.generator.config.rules.IColumnType;
 import static com.baomidou.mybatisplus.generator.config.rules.DbColumnType.*;
 
 /**
- * @author: minton.zhang
- * @since: 2020/12/9 下午4:20
+ * @author minton.zhang
+ * @since 2020/12/9 下午4:20
  */
 public class Oracle12CTypeConvert extends OracleTypeConvert {
 

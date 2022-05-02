@@ -8,20 +8,17 @@
     "logicDeleteFiled": "DEL_FLAG",
     "dataSource": {
       "driverJarFile": "drivers/ojdbc8.jar",
-      "driverClass": "oracle.jdbc.OracleDriver",
+      "driverClass": "oracle.jdbc.driver.OracleDriver",
       "url": "jdbc:oracle:thin:@47.111.8.143:35082/YWJAPDB",
       "username": "YWJA",
-      "password": "jasolar666",
-      "tables": [
-        "表名"
-      ]
+      "password": "ywjadid2021"
     }
   },
   "output": {
-    "mapperFolder": "${user.home}/GenCode/mapper",
-    "mapperXmlFolder": "${user.home}/GenCode/mapper/xml",
-    "entityFolder": "${user.home}/GenCode/entity",
     "entityPackageName": "com.jasolar.tenant.server.po",
-    "mapperPackageName": "com.jasolar.tenant.server.mapper"
+    "mapperPackageName": "com.jasolar.tenant.server.mapper",
+    "tables": [
+      "TENANT_ROBOT"
+    ]
   }
 }

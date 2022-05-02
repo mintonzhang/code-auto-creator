@@ -7,8 +7,8 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * @author: minton.zhang
- * @since: 2020/4/6 19:05
+ * @author minton.zhang
+ * @since 2020/4/6 19:05
  */
 public enum SupportDBType {
     Mysql8("com.mysql.cj.jdbc.Driver", DbType.MYSQL),
@@ -31,14 +31,14 @@ public enum SupportDBType {
     @Getter
     private final DbType dbType;
 
-    public static final Map<String, SupportDBType> DB_CACHE_MAP;
+    public static final Map<String, DbType> DB_CACHE_MAP;
 
     static {
         SupportDBType[] values = values();
         DB_CACHE_MAP = new ConcurrentHashMap<>(values.length);
 
         for (SupportDBType value : values) {
-            DB_CACHE_MAP.put(value.dbType.getDesc(), value);
+            DB_CACHE_MAP.put(value.diverClassName, value.dbType);
         }
     }
 
@@ -47,7 +47,7 @@ public enum SupportDBType {
         this.dbType = dbType;
     }
 
-    public static SupportDBType findTypeByName(String name) {
+    public static DbType findTypeByName(String name) {
         return DB_CACHE_MAP.get(name);
     }
 

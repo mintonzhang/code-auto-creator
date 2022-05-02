@@ -1,8 +1,8 @@
 package cn.minsin.jfx.constant;
 
 /**
- * @author: minton.zhang
- * @since: 2020/4/4 23:15
+ * @author minton.zhang
+ * @since 2020/4/4 23:15
  */
 public interface DefaultConstant {
 

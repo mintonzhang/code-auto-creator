@@ -9,3 +9,5 @@ retrofitapi/
 dependency-reduced-pom.xml
 target
 *.iml
+
+src/main/resources/output
