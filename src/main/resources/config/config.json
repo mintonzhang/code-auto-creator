@@ -2,7 +2,7 @@
   "setting": {
     "mapperSuffix": "Mapper",
     "entitySuffix": "PO",
-    "useJdk8Time": true,
+    "useJdk8Time": false,
     "useLombok": true,
     "isUnderlineToCamel": true,
     "logicDeleteFiled": "DEL_FLAG",
@@ -18,7 +18,10 @@
     "entityPackageName": "com.jasolar.tenant.server.po",
     "mapperPackageName": "com.jasolar.tenant.server.mapper",
     "tables": [
-      "TENANT_ROBOT"
+      "TENANT_ROBOT",
+      "TENANT_LABEL_LIBRARY",
+      "TENANT_NOTIFY",
+      "TENANT_NOTIFY_READ_RECORD"
     ]
   }
 }
